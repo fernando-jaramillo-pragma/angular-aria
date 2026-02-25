@@ -1,0 +1,35 @@
+.tabs-container{
+  margin-top: 32px;
+}
+
+div {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  max-width: 640px;
+  margin: 0 auto;
+  font-family: system-ui, sans-serif;
+  width: 87.5%;
+}
+
+ul {
+  display: flex;
+  gap: 8px;
+  padding: 0 0 0 8px;
+  margin: 0;
+  list-style: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+
+  li {
+    padding: 10px 12px;
+    cursor: pointer;
+    border-bottom: 4px solid transparent;
+    font-weight: 600;
+
+    &[aria-selected="true"] {
+      border-color: #2563eb;
+    }
+  }
+}
+
+section {
+  padding: 1px 16px;
+}
