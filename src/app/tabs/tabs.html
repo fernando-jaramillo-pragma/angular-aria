@@ -1,74 +1,31 @@
-<div class="tabs-container">
-  <ul
-    role="tablist"
-    tabindex="-1"
-    aria-orientation="horizontal"
-    (keydown)="handleTabListKeyDown($event)">
-    <li
-      role="tab"
-      id="overview-tab"
-      (click)="activateTab('overview')"
-      (keydown)="handleTabKeyDown($event, 'overview')"
-      [tabindex]="activeTab() === 'overview' ? 0 : -1"
-      [aria-selected]="activeTab() === 'overview'"
-      aria-controls="overview-pane">
-      Overview
-    </li>
-    <li
-      role="tab"
-      id="members-tab"
-      (click)="activateTab('members')"
-      (keydown)="handleTabKeyDown($event, 'members')"
-      [tabindex]="activeTab() === 'members' ? 0 : -1"
-      [aria-selected]="activeTab() === 'members'"
-      aria-controls="members-pane">
-      Members
-    </li>
-    <li
-      role="tab"
-      id="billing-tab"
-      (click)="activateTab('billing')"
-      (keydown)="handleTabKeyDown($event, 'billing')"
-      [tabindex]="activeTab() === 'billing' ? 0 : -1"
-      [aria-selected]="activeTab() === 'billing'"
-      aria-controls="billing-pane">
-      Billing
-    </li>
+<div ngTabs>
+  <ul ngTabList selectedTab="overview">
+    <li ngTab value="overview">Overview</li>
+    <li ngTab value="members">Members</li>
+    <li ngTab value="billing">Billing</li>
   </ul>
 
-  <section
-    role="tabpanel"
-    id="overview-pane"
-    [tabindex]="activeTab() === 'overview' ? 0 : -1"
-    aria-labelledby="overview-tab">
-    @if (activeTab() === 'overview') {
+  <section ngTabPanel value="overview">
+    <ng-template ngTabContent>
       <h3>Project overview</h3>
       <p>
         This project is running in <strong>production</strong>. Changes here take effect
         immediately.
       </p>
-    }
+    </ng-template>
   </section>
 
-  <section
-    role="tabpanel"
-    id="members-pane"
-    [tabindex]="activeTab() === 'members' ? 0 : -1"
-    aria-labelledby="members-tab">
-    @if (activeTab() === 'members') {
+  <section ngTabPanel value="members">
+    <ng-template ngTabContent>
       <h3>Team members</h3>
       <p>Manage who has access to this project and what they can do.</p>
-    }
+    </ng-template>
   </section>
 
-  <section
-    role="tabpanel"
-    id="billing-pane"
-    [tabindex]="activeTab() === 'billing' ? 0 : -1"
-    aria-labelledby="billing-tab">
-    @if (activeTab() === 'billing') {
+  <section ngTabPanel value="billing">
+    <ng-template ngTabContent>
       <h3>Billing</h3>
       <p>View invoices, update payment methods, or change your plan.</p>
-    }
+    </ng-template>
   </section>
 </div>
