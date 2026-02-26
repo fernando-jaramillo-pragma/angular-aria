@@ -9,7 +9,7 @@ type TabsType = 'overview' | 'members' | 'billing';
   styleUrl: './tabs.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class Tabs {
+export class TabsComponent {
   protected activeTab = signal<TabsType>('overview');
   protected readonly tabs: readonly TabsType[] = ['overview', 'members', 'billing'] as const;
   protected readonly focusedTabIndex = signal(0);

@@ -1,10 +1,10 @@
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
-import { Tabs } from './tabs/tabs';
+import { TabsComponent } from './tabs/tabs';
 
 @Component({
   selector: 'app-root',
   template: `<app-tabs />`,
-  imports: [Tabs],
+  imports: [TabsComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class App {
