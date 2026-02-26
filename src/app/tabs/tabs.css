@@ -24,7 +24,7 @@ ul {
     border-bottom: 4px solid transparent;
     font-weight: 600;
 
-    &[aria-selected="true"] {
+    &.active {
       border-color: #2563eb;
     }
   }
