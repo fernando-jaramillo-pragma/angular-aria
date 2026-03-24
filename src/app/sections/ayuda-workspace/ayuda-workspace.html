@@ -1,0 +1,80 @@
+<section class="help-workspace" aria-label="Herramientas de ayuda">
+  <div
+    ngToolbar
+    class="help-toolbar"
+    aria-label="Herramientas de ayuda"
+    [values]="toolbarValues()"
+    (valuesChange)="onToolbarValuesChange($event)">
+    <div ngToolbarWidgetGroup role="radiogroup" class="group" aria-label="Seleccionar accion">
+      <button
+        ngToolbarWidget
+        class="tool-btn tool-btn--faq"
+        role="radio"
+        type="button"
+        value="faq"
+        #faqTool="ngToolbarWidget"
+        [attr.aria-checked]="faqTool.selected()"
+        [class.is-selected]="faqTool.selected()"
+        (click)="selectTool('faq')">
+        FAQ
+      </button>
+      <button
+        ngToolbarWidget
+        class="tool-btn tool-btn--docs"
+        role="radio"
+        type="button"
+        value="docs"
+        #docsTool="ngToolbarWidget"
+        [attr.aria-checked]="docsTool.selected()"
+        [class.is-selected]="docsTool.selected()"
+        (click)="selectTool('docs')">
+        Docs
+      </button>
+      <button
+        ngToolbarWidget
+        class="tool-btn tool-btn--ticket"
+        role="radio"
+        type="button"
+        value="ticket"
+        #ticketTool="ngToolbarWidget"
+        [attr.aria-checked]="ticketTool.selected()"
+        [class.is-selected]="ticketTool.selected()"
+        (click)="selectTool('ticket')">
+        Ticket
+      </button>
+    </div>
+
+    <div class="separator" role="separator"></div>
+
+    <button ngToolbarWidget type="button" value="clear" class="clear-btn" (click)="clearGrid()">
+      Limpiar grid
+    </button>
+  </div>
+
+  <p class="help-caption">
+    Herramienta activa: <strong>{{ activeTool().toUpperCase() }}</strong
+    >. Selecciona celdas en el grid para aplicar la accion.
+  </p>
+
+  <table ngGrid class="help-grid" [enableSelection]="false" rowWrap="loop" colWrap="loop">
+    @for (row of gridData(); track $index) {
+      <tr ngGridRow>
+        @for (cell of row; track cell.id) {
+          <td ngGridCell>
+            <button
+              ngGridCellWidget
+              class="grid-card"
+              [class.grid-card--faq]="cell.code === 'FAQ'"
+              [class.grid-card--docs]="cell.code === 'DOCS'"
+              [class.grid-card--ticket]="cell.code === 'TICKET'"
+              type="button"
+              (click)="applyTool(cell.id)">
+              <span class="grid-code">{{ cell.code }}</span>
+              <span class="grid-title">{{ cell.title }}</span>
+            </button>
+          </td>
+        }
+      </tr>
+    }
+  </table>
+</section>

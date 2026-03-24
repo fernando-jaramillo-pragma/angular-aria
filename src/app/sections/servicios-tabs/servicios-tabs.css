@@ -1,0 +1,41 @@
+.services-tabs {
+  background: #ffffff;
+  border: 1px solid #dbe6ea;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.services-tabs ul {
+  border-bottom: 1px solid #dbe6ea;
+  display: flex;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0 10px;
+}
+
+.services-tabs li {
+  border-bottom: 3px solid transparent;
+  border-radius: 8px 8px 0 0;
+  cursor: pointer;
+  font-weight: 700;
+  padding: 10px 12px;
+}
+
+.services-tabs li[aria-selected='true'] {
+  background: #ecfeff;
+  border-color: #0ea5e9;
+}
+
+.services-tabs section {
+  color: #1f2937;
+  padding: 2px 16px 14px;
+}
+
+.services-tabs h3 {
+  margin-bottom: 8px;
+}
+
+.services-tabs p {
+  margin: 0;
+}

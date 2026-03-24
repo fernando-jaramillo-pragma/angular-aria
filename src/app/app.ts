@@ -1,12 +1,30 @@
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
-import { TabsComponent } from './tabs/tabs';
+import { MenuComponent } from './menu/menu';
+import { MenuSection } from './menu/menu.model';
+import { SectionsComponent } from './sections/sections';
 
 @Component({
   selector: 'app-root',
-  template: `<app-tabs />`,
-  imports: [TabsComponent],
+  template: `
+    <div class="app-layout">
+      <header class="app-header">
+        <h1>Angular Aria - Demo de Menu</h1>
+        <p>Menubar basico con 4 opciones y navegacion por teclado usando Angular Aria.</p>
+      </header>
+
+      <app-menu [currentSection]="currentSection()" (sectionChange)="onSectionChange($event)" />
+
+      <app-sections [currentSection]="currentSection()" />
+    </div>
+  `,
+  imports: [MenuComponent, SectionsComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class App {
   protected readonly title = signal('angular-aria-pragma');
+  protected readonly currentSection = signal<MenuSection>('inicio');
+
+  protected onSectionChange(section: MenuSection) {
+    this.currentSection.set(section);
+  }
 }

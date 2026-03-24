@@ -1,0 +1,71 @@
+<section class="productos-grid" aria-label="Selector de productos">
+  <article class="tool-card">
+    <h3>Buscar producto</h3>
+    <p>Busca en el Combobox, selecciona un producto y presiona Agregar a la lista.</p>
+
+    <div ngCombobox #combobox="ngCombobox" filterMode="manual">
+      <div #origin class="combobox-field">
+        <input
+          aria-label="Buscar producto"
+          placeholder="Escribe para filtrar"
+          ngComboboxInput
+          [value]="query()"
+          (valueChange)="onQueryChange($event)" />
+      </div>
+
+      <ng-template ngComboboxPopupContainer>
+        <ng-template
+          [cdkConnectedOverlay]="{ origin, usePopover: 'inline', matchWidth: true }"
+          [cdkConnectedOverlayOpen]="combobox.expanded()">
+          <div class="popup">
+            @if (filteredProducts().length === 0) {
+              <div class="no-results">No se encontraron productos.</div>
+            } @else {
+              <div ngListbox [values]="draftValues()" (valuesChange)="onDraftValuesChange($event)">
+                @for (product of filteredProducts(); track product) {
+                  <div ngOption [value]="product" [label]="product">
+                    <span class="option-label">{{ product }}</span>
+                    <span class="check-icon" aria-hidden="true">✓</span>
+                  </div>
+                }
+              </div>
+            }
+          </div>
+        </ng-template>
+      </ng-template>
+    </div>
+
+    <div class="selection-row">
+      <span class="selection-text">
+        @if (selectedDraft()) {
+          Seleccionado: {{ selectedDraft() }}
+        } @else {
+          Seleccionado: ninguno
+        }
+      </span>
+      <button type="button" class="add-btn" [disabled]="!canAdd()" (click)="addSelectedProduct()">
+        Agregar a la lista
+      </button>
+    </div>
+  </article>
+
+  <article class="tool-card">
+    <h3>Productos agregados</h3>
+    <p>Esta lista muestra los productos agregados desde el Combobox.</p>
+
+    <div class="listbox-frame">
+      @if (selectedProducts().length === 0) {
+        <div class="no-results">No has agregado productos.</div>
+      } @else {
+        <div ngListbox [values]="selectedProducts()">
+          @for (product of selectedProducts(); track product) {
+            <div ngOption [value]="product" [label]="product">
+              <span class="option-label">{{ product }}</span>
+              <span class="check-icon" aria-hidden="true">✓</span>
+            </div>
+          }
+        </div>
+      }
+    </div>
+  </article>
+</section>

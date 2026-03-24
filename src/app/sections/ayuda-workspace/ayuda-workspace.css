@@ -1,0 +1,174 @@
+.help-workspace {
+  display: grid;
+  gap: 14px;
+}
+
+.help-toolbar {
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #dbe6ea;
+  border-radius: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 10px;
+}
+
+.group {
+  display: flex;
+  gap: 8px;
+}
+
+[ngToolbarWidget] {
+  background: transparent;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  color: #0f172a;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+  padding: 8px 10px;
+}
+
+[ngToolbarWidget]:hover {
+  background: #f1f5f9;
+}
+
+[ngToolbarWidget]:focus-visible {
+  outline: 2px solid #22d3ee;
+  outline-offset: 2px;
+}
+
+[ngToolbarWidget].is-selected {
+  background: #e6fffb;
+  border-color: #14b8a6;
+  color: #0f766e;
+}
+
+.tool-btn--faq {
+  color: #166534;
+}
+
+.tool-btn--faq.is-selected {
+  background: #f0fdf4;
+  border-color: #86efac;
+  color: #166534;
+}
+
+.tool-btn--docs {
+  color: #1e40af;
+}
+
+.tool-btn--docs.is-selected {
+  background: #eff6ff;
+  border-color: #93c5fd;
+  color: #1d4ed8;
+}
+
+.tool-btn--ticket {
+  color: #c2410c;
+}
+
+.tool-btn--ticket.is-selected {
+  background: #fff7ed;
+  border-color: #fdba74;
+  color: #c2410c;
+}
+
+.separator {
+  background: #cbd5e1;
+  height: 28px;
+  width: 1px;
+}
+
+.clear-btn {
+  margin-left: auto;
+}
+
+.help-caption {
+  color: #334155;
+  margin: 0;
+}
+
+.help-grid {
+  border-spacing: 8px;
+  width: 100%;
+}
+
+[ngGridCell] {
+  width: 33.33%;
+}
+
+.grid-card {
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #dbe6ea;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  justify-content: center;
+  min-height: 92px;
+  padding: 10px;
+  width: 100%;
+}
+
+.grid-card:hover {
+  background: #f8fafc;
+}
+
+.grid-card--faq {
+  background: #f0fdf4;
+  border-color: #86efac;
+}
+
+.grid-card--docs {
+  background: #eff6ff;
+  border-color: #93c5fd;
+}
+
+.grid-card--ticket {
+  background: #fff7ed;
+  border-color: #fdba74;
+}
+
+.grid-card:focus-visible {
+  outline: 2px dashed #06b6d4;
+  outline-offset: 2px;
+}
+
+.grid-code {
+  color: #0f766e;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.grid-card--docs .grid-code {
+  color: #1d4ed8;
+}
+
+.grid-card--ticket .grid-code {
+  color: #c2410c;
+}
+
+.grid-title {
+  color: #1e293b;
+  font-size: 0.92rem;
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .help-grid,
+  [ngGrid],
+  tbody,
+  tr {
+    display: block;
+  }
+
+  [ngGridCell] {
+    display: block;
+    width: 100%;
+  }
+}

@@ -1,0 +1,56 @@
+<div ngAccordionGroup class="basic-accordion" [multiExpandable]="false">
+  <h3>
+    <button
+      ngAccordionTrigger
+      panelId="inicio-panel-1"
+      #trigger1="ngAccordionTrigger"
+      [expanded]="true">
+      Estado general del entorno
+      <span
+        aria-hidden="true"
+        class="expand-icon"
+        [class.expand-icon__expanded]="trigger1.expanded()"></span>
+    </button>
+  </h3>
+  <div ngAccordionPanel panelId="inicio-panel-1">
+    <ng-template ngAccordionContent>
+      <p>El entorno esta estable y listo para demostraciones de componentes accesibles.</p>
+    </ng-template>
+  </div>
+
+  <h3>
+    <button ngAccordionTrigger panelId="inicio-panel-2" #trigger2="ngAccordionTrigger">
+      Accesibilidad aplicada
+      <span
+        aria-hidden="true"
+        class="expand-icon"
+        [class.expand-icon__expanded]="trigger2.expanded()"></span>
+    </button>
+  </h3>
+  <div ngAccordionPanel panelId="inicio-panel-2">
+    <ng-template ngAccordionContent>
+      <p>
+        Se aplican atributos ARIA y navegacion por teclado con las directivas oficiales de Angular
+        Aria.
+      </p>
+    </ng-template>
+  </div>
+
+  <h3>
+    <button ngAccordionTrigger panelId="inicio-panel-3" #trigger3="ngAccordionTrigger">
+      Siguiente paso recomendado
+      <span
+        aria-hidden="true"
+        class="expand-icon"
+        [class.expand-icon__expanded]="trigger3.expanded()"></span>
+    </button>
+  </h3>
+  <div ngAccordionPanel panelId="inicio-panel-3">
+    <ng-template ngAccordionContent>
+      <p>
+        Conectar acciones de negocio reales a cada seccion y agregar pruebas de navegacion por
+        teclado.
+      </p>
+    </ng-template>
+  </div>
+</div>

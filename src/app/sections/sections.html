@@ -1,0 +1,42 @@
+<section class="sections-shell" aria-live="polite">
+  @switch (currentSection()) {
+    @case ('inicio') {
+      <article class="section-card">
+        <h2>Inicio</h2>
+        <p class="section-intro">
+          Resumen rapido del estado del proyecto. Esta seccion usa un accordion de Angular Aria.
+        </p>
+
+        <app-inicio-accordion />
+      </article>
+    }
+
+    @case ('productos') {
+      <article class="section-card">
+        <h2>Productos</h2>
+        <p class="section-intro">
+          Combobox y Listbox de Angular Aria trabajando en simultaneo sobre la misma seleccion.
+        </p>
+        <app-productos-selector />
+      </article>
+    }
+
+    @case ('servicios') {
+      <article class="section-card">
+        <h2>Servicios</h2>
+        <p class="section-intro">Explora los servicios por categoria usando tabs accesibles.</p>
+        <app-servicios-tabs />
+      </article>
+    }
+
+    @case ('ayuda') {
+      <article class="section-card">
+        <h2>Ayuda</h2>
+        <p class="section-intro">
+          Usa el Toolbar para elegir una accion y aplicala en el Grid para organizar solicitudes.
+        </p>
+        <app-ayuda-workspace />
+      </article>
+    }
+  }
+</section>

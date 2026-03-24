@@ -1,0 +1,40 @@
+.menu-shell {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: linear-gradient(120deg, #0f172a 0%, #1d4f55 100%);
+  box-shadow: 0 18px 40px rgb(15 23 42 / 0.25);
+  overflow: hidden;
+}
+
+[ngMenuBar] {
+  display: flex;
+  gap: 6px;
+  padding: 10px;
+}
+
+.menu-bar-item {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  border-radius: 10px;
+  color: #ecfeff;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 10px 14px;
+  transition: background-color 180ms ease;
+}
+
+.menu-bar-item[aria-expanded='true'],
+.menu-bar-item:hover {
+  background-color: rgb(255 255 255 / 0.14);
+}
+
+.menu-bar-item:focus-visible {
+  outline: 2px solid #67e8f9;
+  outline-offset: 2px;
+}
+
+.menu-bar-item--active {
+  background-color: rgb(255 255 255 / 0.22);
+}

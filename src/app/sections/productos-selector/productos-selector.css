@@ -1,0 +1,129 @@
+.productos-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.tool-card {
+  background: #ffffff;
+  border: 1px solid #dbe6ea;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.tool-card h3 {
+  margin: 0;
+}
+
+.tool-card p {
+  color: #475569;
+  margin: 8px 0 14px;
+}
+
+.selection-row {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+
+.selection-text {
+  color: #334155;
+  font-size: 0.92rem;
+}
+
+.add-btn {
+  background: #0f766e;
+  border: 0;
+  border-radius: 8px;
+  color: #ffffff;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+  padding: 8px 12px;
+}
+
+.add-btn:disabled {
+  background: #94a3b8;
+  cursor: not-allowed;
+}
+
+.add-btn:focus-visible {
+  outline: 2px solid #22d3ee;
+  outline-offset: 2px;
+}
+
+.combobox-field {
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.combobox-field input {
+  border: 0;
+  color: #0f172a;
+  font: inherit;
+  outline: none;
+  padding: 10px 12px;
+  width: 100%;
+}
+
+.popup,
+.listbox-frame {
+  background: #ffffff;
+  border: 1px solid #dbe6ea;
+  border-radius: 10px;
+  margin-top: 8px;
+  max-height: 230px;
+  overflow: auto;
+  padding: 6px;
+}
+
+[ngListbox] {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+[ngOption] {
+  align-items: center;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  margin: 1px;
+  min-height: 2.25rem;
+  padding: 0 0.75rem;
+}
+
+[ngOption]:hover {
+  background-color: #f1f5f9;
+}
+
+[ngOption][data-active='true'] {
+  outline: 2px solid #22d3ee;
+  outline-offset: -2px;
+}
+
+[ngOption][aria-selected='true'] {
+  background-color: #e6fffb;
+  color: #0f766e;
+  font-weight: 700;
+}
+
+[ngOption]:not([aria-selected='true']) .check-icon {
+  display: none;
+}
+
+.option-label {
+  flex: 1;
+}
+
+.check-icon {
+  font-size: 0.9rem;
+}
+
+.no-results {
+  color: #64748b;
+  padding: 8px;
+}

@@ -1,0 +1,29 @@
+.sections-shell {
+  margin-top: 18px;
+}
+
+.section-card {
+  background: #f8fafc;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: 0 16px 36px rgb(15 23 42 / 0.08);
+  padding: 20px;
+}
+
+.section-card h2 {
+  margin: 0;
+}
+
+.section-intro {
+  color: #334155;
+  margin: 8px 0 18px;
+}
+
+.section-card ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.section-card li {
+  margin-bottom: 8px;
+}

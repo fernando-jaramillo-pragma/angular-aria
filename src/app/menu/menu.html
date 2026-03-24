@@ -1,0 +1,51 @@
+<nav class="menu-shell" aria-label="Menu principal">
+  <div ngMenuBar (onSelect)="onMenuBarSelect($event)">
+    <button
+      type="button"
+      ngMenuItem
+      class="menu-bar-item"
+      [class.menu-bar-item--active]="currentSection() === 'inicio'"
+      (click)="onMenuSelect('inicio')"
+      (keydown.enter)="onMenuSelect('inicio')"
+      (keydown.space)="onMenuSelect('inicio'); $event.preventDefault()"
+      value="inicio">
+      Inicio
+    </button>
+
+    <button
+      type="button"
+      ngMenuItem
+      class="menu-bar-item"
+      [class.menu-bar-item--active]="currentSection() === 'productos'"
+      (click)="onMenuSelect('productos')"
+      (keydown.enter)="onMenuSelect('productos')"
+      (keydown.space)="onMenuSelect('productos'); $event.preventDefault()"
+      value="productos">
+      Productos
+    </button>
+
+    <button
+      type="button"
+      ngMenuItem
+      class="menu-bar-item"
+      [class.menu-bar-item--active]="currentSection() === 'servicios'"
+      (click)="onMenuSelect('servicios')"
+      (keydown.enter)="onMenuSelect('servicios')"
+      (keydown.space)="onMenuSelect('servicios'); $event.preventDefault()"
+      value="servicios">
+      Servicios
+    </button>
+
+    <button
+      type="button"
+      ngMenuItem
+      class="menu-bar-item"
+      [class.menu-bar-item--active]="currentSection() === 'ayuda'"
+      (click)="onMenuSelect('ayuda')"
+      (keydown.enter)="onMenuSelect('ayuda')"
+      (keydown.space)="onMenuSelect('ayuda'); $event.preventDefault()"
+      value="ayuda">
+      Ayuda
+    </button>
+  </div>
+</nav>

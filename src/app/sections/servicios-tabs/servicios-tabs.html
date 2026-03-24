@@ -1,0 +1,37 @@
+<div class="services-tabs" ngTabs>
+  <ul ngTabList selectedTab="implementacion">
+    <li ngTab value="implementacion">Implementacion</li>
+    <li ngTab value="soporte">Soporte</li>
+    <li ngTab value="capacitacion">Capacitacion</li>
+  </ul>
+
+  <section ngTabPanel value="implementacion">
+    <ng-template ngTabContent>
+      <h3>Implementacion guiada</h3>
+      <p>
+        Configuramos el entorno inicial, conectamos integraciones clave y validamos el flujo de
+        salida a produccion.
+      </p>
+    </ng-template>
+  </section>
+
+  <section ngTabPanel value="soporte">
+    <ng-template ngTabContent>
+      <h3>Soporte tecnico</h3>
+      <p>
+        Atencion por prioridad con seguimiento de incidentes, diagnostico tecnico y tiempos de
+        respuesta definidos.
+      </p>
+    </ng-template>
+  </section>
+
+  <section ngTabPanel value="capacitacion">
+    <ng-template ngTabContent>
+      <h3>Capacitacion del equipo</h3>
+      <p>
+        Sesiones practicas para usuarios funcionales y tecnicos con guias, ejercicios y checklist de
+        adopcion.
+      </p>
+    </ng-template>
+  </section>
+</div>
