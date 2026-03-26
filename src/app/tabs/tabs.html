@@ -1,32 +1,32 @@
 <main>
   <div class="tabs-container">
     <ul>
-      <li (click)="selectTab(0)" [class.active]="activeTab() === 0">Overview</li>
-      <li (click)="selectTab(1)" [class.active]="activeTab() === 1">Members</li>
-      <li (click)="selectTab(2)" [class.active]="activeTab() === 2">Billing</li>
+      <li (click)="selectTab(0)" [class.active]="activeTab() === 0">Resumen</li>
+      <li (click)="selectTab(1)" [class.active]="activeTab() === 1">Miembros</li>
+      <li (click)="selectTab(2)" [class.active]="activeTab() === 2">Facturación</li>
     </ul>
 
     @if (activeTab() === 0) {
       <section>
-        <h3>Project overview</h3>
+        <h3>Resumen del proyecto</h3>
         <p>
-          This project is running in <strong>production</strong>. Changes here take effect
-          immediately.
+          Este proyecto se está ejecutando en <strong>producción</strong>. Los cambios aquí se
+          aplican de inmediato.
         </p>
       </section>
     }
 
     @if (activeTab() === 1) {
       <section>
-        <h3>Team members</h3>
-        <p>Manage who has access to this project and what they can do.</p>
+        <h3>Miembros del equipo</h3>
+        <p>Administra quién tiene acceso a este proyecto y qué puede hacer.</p>
       </section>
     }
 
     @if (activeTab() === 2) {
       <section>
-        <h3>Billing</h3>
-        <p>View invoices, update payment methods, or change your plan.</p>
+        <h3>Facturación</h3>
+        <p>Consulta facturas, actualiza métodos de pago o cambia tu plan.</p>
       </section>
     }
   </div>
