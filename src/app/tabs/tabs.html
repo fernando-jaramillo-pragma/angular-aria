@@ -1,32 +1,32 @@
 <main>
   <div ngTabs>
-    <ul ngTabList selectedTab="overview">
-      <li ngTab value="overview">Overview</li>
-      <li ngTab value="members">Members</li>
-      <li ngTab value="billing">Billing</li>
+    <ul ngTabList selectedTab="overview" aria-label="Secciones del proyecto">
+      <li ngTab value="overview">Resumen</li>
+      <li ngTab value="members">Miembros</li>
+      <li ngTab value="billing">Facturación</li>
     </ul>
 
     <section ngTabPanel value="overview">
       <ng-template ngTabContent>
-        <h3>Project overview</h3>
+        <h3>Resumen del proyecto</h3>
         <p>
-          This project is running in <strong>production</strong>. Changes here take effect
-          immediately.
+          Este proyecto se está ejecutando en <strong>producción</strong>. Los cambios aquí se
+          aplican de inmediato.
         </p>
       </ng-template>
     </section>
 
     <section ngTabPanel value="members">
       <ng-template ngTabContent>
-        <h3>Team members</h3>
-        <p>Manage who has access to this project and what they can do.</p>
+        <h3>Miembros del equipo</h3>
+        <p>Administra quién tiene acceso a este proyecto y qué puede hacer.</p>
       </ng-template>
     </section>
 
     <section ngTabPanel value="billing">
       <ng-template ngTabContent>
-        <h3>Billing</h3>
-        <p>View invoices, update payment methods, or change your plan.</p>
+        <h3>Facturación</h3>
+        <p>Consulta facturas, actualiza métodos de pago o cambia tu plan.</p>
       </ng-template>
     </section>
   </div>
