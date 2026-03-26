@@ -4,6 +4,7 @@
       role="tablist"
       tabindex="-1"
       aria-orientation="horizontal"
+      aria-label="Secciones del proyecto"
       (keydown)="handleTabListKeyDown($event)">
       <li
         role="tab"
@@ -13,7 +14,7 @@
         [tabindex]="activeTab() === 'overview' ? 0 : -1"
         [aria-selected]="activeTab() === 'overview'"
         aria-controls="overview-pane">
-        Overview
+        Resumen
       </li>
       <li
         role="tab"
@@ -23,7 +24,7 @@
         [tabindex]="activeTab() === 'members' ? 0 : -1"
         [aria-selected]="activeTab() === 'members'"
         aria-controls="members-pane">
-        Members
+        Miembros
       </li>
       <li
         role="tab"
@@ -33,7 +34,7 @@
         [tabindex]="activeTab() === 'billing' ? 0 : -1"
         [aria-selected]="activeTab() === 'billing'"
         aria-controls="billing-pane">
-        Billing
+        Facturación
       </li>
     </ul>
 
@@ -43,10 +44,10 @@
       [tabindex]="activeTab() === 'overview' ? 0 : -1"
       aria-labelledby="overview-tab">
       @if (activeTab() === 'overview') {
-        <h3>Project overview</h3>
+        <h3>Resumen del proyecto</h3>
         <p>
-          This project is running in <strong>production</strong>. Changes here take effect
-          immediately.
+          Este proyecto se está ejecutando en <strong>producción</strong>. Los cambios aquí se
+          aplican de inmediato.
         </p>
       }
     </section>
@@ -57,8 +58,8 @@
       [tabindex]="activeTab() === 'members' ? 0 : -1"
       aria-labelledby="members-tab">
       @if (activeTab() === 'members') {
-        <h3>Team members</h3>
-        <p>Manage who has access to this project and what they can do.</p>
+        <h3>Miembros del equipo</h3>
+        <p>Administra quién tiene acceso a este proyecto y qué puede hacer.</p>
       }
     </section>
 
@@ -68,8 +69,8 @@
       [tabindex]="activeTab() === 'billing' ? 0 : -1"
       aria-labelledby="billing-tab">
       @if (activeTab() === 'billing') {
-        <h3>Billing</h3>
-        <p>View invoices, update payment methods, or change your plan.</p>
+        <h3>Facturación</h3>
+        <p>Consulta facturas, actualiza métodos de pago o cambia tu plan.</p>
       }
     </section>
   </div>
