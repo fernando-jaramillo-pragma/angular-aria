@@ -51,7 +51,7 @@ export class AyudaWorkspaceComponent {
   }
 
   clearGrid() {
-    this.gridData.set(this.createInitialGrid());
+    queueMicrotask(() => this.gridData.set(this.createInitialGrid()));
   }
 
   private createInitialGrid(): HelpGridCell[][] {

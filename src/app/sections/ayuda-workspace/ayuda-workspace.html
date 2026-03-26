@@ -46,14 +46,21 @@
 
     <div class="separator" role="separator"></div>
 
-    <button ngToolbarWidget type="button" value="clear" class="clear-btn" (click)="clearGrid()">
+    <button
+      ngToolbarWidget
+      type="button"
+      value="clear"
+      class="clear-btn"
+      (click)="clearGrid()"
+      (keydown.enter)="clearGrid()"
+      aria-label="Limpiar el contenido del grid">
       Limpiar grid
     </button>
   </div>
 
   <p class="help-caption">
-    Herramienta activa: <strong>{{ activeTool().toUpperCase() }}</strong
-    >. Selecciona celdas en el grid para aplicar la accion.
+    Herramienta activa: <strong>{{ activeTool().toUpperCase() }} </strong>. Selecciona celdas en el
+    grid para aplicar la accion.
   </p>
 
   <table ngGrid class="help-grid" [enableSelection]="false" rowWrap="loop" colWrap="loop">
